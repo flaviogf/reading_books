@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+clean-code:
+  title: Clean Code
+  author: Robert C. Marting
+  cover: https://via.placeholder.com/133x191
+  status: to read
+
+refactoring:
+  title: Refactoring
+  author: Martin Fowler
+  cover: https://via.placeholder.com/133x191
+  status: reading
+
+extreme-programming:
+  title: Extreme Programming
+  author: Vinicius Teles
+  cover: https://via.placeholder.com/133x191
+  status: read
