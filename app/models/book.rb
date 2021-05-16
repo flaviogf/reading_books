@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-  BOOK_STATUSES = ['to read', 'reading', 'read']
+  enum status: [:to_read, :reading, :read]
 
   validates :title, presence: true
 
@@ -7,5 +7,5 @@ class Book < ApplicationRecord
 
   validates :cover, presence: true
 
-  validates :status, presence: true, inclusion: { in: BOOK_STATUSES }
+  validates :status, presence: true
 end
