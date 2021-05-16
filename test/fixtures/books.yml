@@ -1,6 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-clean-code:
+clean_code:
   title: Clean Code
   author: Robert C. Marting
   cover: https://via.placeholder.com/133x191
@@ -12,7 +12,7 @@ refactoring:
   cover: https://via.placeholder.com/133x191
   status: reading
 
-extreme-programming:
+extreme_programming:
   title: Extreme Programming
   author: Vinicius Teles
   cover: https://via.placeholder.com/133x191
