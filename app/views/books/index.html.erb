@@ -1,1 +1,17 @@
-<h1>Books</h1>
+<main class="books">
+  <ul class="books__list">
+    <% @books.each do |book| %>
+    <li class="books__item">
+      <div class="books__cover-wrapper">
+        <img class="books__cover" src="<%= book.cover %>" />
+      </div>
+
+      <div class="books__info">
+        <span class="books__title"><%= book.title %></span>
+        <span class="books__author"><%= book.author %></span>
+        <span class="books__status"><%= book.status %></span>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</main>

@@ -1,3 +1,47 @@
-// Place all the styles related to the Books controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.books {
+  padding: 16px;
+
+  &__list {
+  }
+
+  &__item {
+    align-items: center;
+    display: flex;
+    padding: 5px 0px;
+  }
+
+  &__cover-wrapper {
+    height: 65px;
+    width: 45px;
+  }
+
+  &__cover {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__info {
+    flex: 1;
+    padding: 0px 13px;
+  }
+
+  &__title {
+    display: block;
+    font-size: 16px;
+  }
+
+  &__author {
+    display: block;
+    font-size: 14px;
+  }
+
+  &__status {
+    background-color: #e0e1e2;
+    border-radius: 3px;
+    display: block;
+    font-size: 12px;
+    max-width: 64px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
