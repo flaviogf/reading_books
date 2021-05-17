@@ -2,9 +2,9 @@
 
 clean_code:
   title: Clean Code
-  author: Robert C. Marting
+  author: Robert C. Martin
   cover: https://via.placeholder.com/133x191
-  status: to read
+  status: to_read
 
 refactoring:
   title: Refactoring
