@@ -4,6 +4,11 @@
   &__list {
   }
 
+  &__link {
+    color: #000000;
+    text-decoration: none;
+  }
+
   &__item {
     align-items: center;
     display: flex;
@@ -43,5 +48,20 @@
     max-width: 64px;
     text-transform: uppercase;
     text-align: center;
+
+    &--to-read {
+      background-color: #f2711c;
+      color: #ffffff;
+    }
+
+    &--reading {
+      background-color: #fbbd08;
+      color: #ffffff;
+    }
+
+    &--read {
+      background-color: #21ba45;
+      color: #ffffff;
+    }
   }
 }
