@@ -3,14 +3,15 @@
 <main class="books">
   <ul class="books__list">
     <% @books.each do |book| %>
-    <%= link_to book, class: 'books__link' do %>
     <li class="books__item">
       <div class="books__cover-wrapper">
         <img class="books__cover" src="<%= book.cover %>" />
       </div>
 
       <div class="books__info">
+        <%= link_to book, class: 'books__link' do %>
         <span class="books__title"><%= book.title %></span>
+        <% end %>
         <span class="books__author"><%= book.author %></span>
         <% if book.to_read? %>
         <span class="books__status books__status--to-read">
@@ -24,10 +25,17 @@
         <span class="books__status books__status--read">
           <%= book.status %>
         </span>
-        <%end%>
+        <% end %>
+      </div>
+
+      <div class="books__actions">
+        <%= link_to book, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <div class="books__destroy">
+          <span class="material-icons">delete</span>
+        </div>
+        <% end %>
       </div>
     </li>
-    <% end %>
     <% end %>
   </ul>
 </main>
