@@ -82,4 +82,20 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
   end
+
+  test 'should destroy book' do
+    book = books(:clean_code)
+
+    delete book_path(book)
+
+    assert_equal 2, Book.count
+  end
+
+  test 'should redirect to books url when destroy a book' do
+    book = books(:clean_code)
+
+    delete book_path(book)
+
+    assert_redirected_to books_url
+  end
 end
