@@ -1,1 +1,29 @@
-<h1>New Book<h1>
+<%= render 'shared/navbar' %>
+
+<main class="book">
+  <%= form_with model: @book do |form| %>
+  <div class="book__form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="book__form-group">
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div class="book__form-group">
+    <%= form.label :cover %>
+    <%= form.url_field :cover %>
+  </div>
+
+  <div class="book__form-group">
+    <%= form.label :status %>
+    <%= form.select :status, [['To Read', 'to_read'], ['Reading', 'reading'], ['Read', 'read']]%>
+  </div>
+
+  <button class="book__submit">
+    <span class="material-icons">done</span>
+  </button>
+  <%end%>
+</main>
