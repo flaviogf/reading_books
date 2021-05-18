@@ -146,3 +146,70 @@
     width: 50px;
   }
 }
+
+.book-show {
+  display: flex;
+  padding: 16px;
+
+  &__cover-wrapper {
+    height: 191px;
+    width: 133px;
+  }
+
+  &__cover {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 13px;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  &__author {
+  }
+
+  &__status {
+    border-radius: 3px;
+    margin-top: 13px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100px;
+
+    &--to-read {
+      background-color: #f2711c;
+      color: #ffffff;
+    }
+
+    &--reading {
+      background-color: #fbbd08;
+      color: #ffffff;
+    }
+
+    &--read {
+      background-color: #21ba45;
+      color: #ffffff;
+    }
+  }
+
+  &__edit-button {
+    align-items: center;
+    background-color: #fbbd08;
+    border-radius: 50%;
+    bottom: 32px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    color: #ffffff;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    transform: translateX(calc(50vw - 25px));
+    width: 50px;
+  }
+}

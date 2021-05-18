@@ -1,1 +1,25 @@
-<h1>Book</h1>
+<%= render 'shared/navbar' %>
+
+<main class="book-show">
+  <div class="book-show__cover-wrapper">
+    <img class="book-show__cover" src="<%= @book.cover %>" />
+  </div>
+
+  <div class="book-show__info">
+    <span class="book-show__title"><%= @book.title %></span>
+    <span class="book-show__author"><%= @book.author %></span>
+    <% if @book.to_read? %>
+    <span class="book-show__status book-show__status--to-read"><%= @book.status %></span>
+    <% elsif @book.reading? %>
+    <span class="book-show__status book-show__status--reading"><%= @book.status %></span>
+    <% elsif @book.read? %>
+    <span class="book-show__status book-show__status--read"><%= @book.status %></span>
+    <% end %>
+  </div>
+</main>
+
+<%= link_to edit_book_path(@book) do %>
+  <div class="book-show__edit-button">
+    <span class="material-icons">edit</span>
+  </div>
+<% end %>
