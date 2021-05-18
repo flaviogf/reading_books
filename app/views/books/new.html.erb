@@ -5,21 +5,33 @@
   <div class="book__form-group">
     <%= form.label :title %>
     <%= form.text_field :title %>
+    <% @book.errors.messages_for(:title).each do |message| %>
+    <span class="book__error"><%= message %></span>
+    <% end %>
   </div>
 
   <div class="book__form-group">
     <%= form.label :author %>
     <%= form.text_field :author %>
+    <% @book.errors.messages_for(:author).each do |message| %>
+    <span class="book__error"><%= message %></span>
+    <% end %>
   </div>
 
   <div class="book__form-group">
     <%= form.label :cover %>
     <%= form.url_field :cover %>
+    <% @book.errors.messages_for(:cover).each do |message| %>
+    <span class="book__error"><%= message %></span>
+    <% end %>
   </div>
 
   <div class="book__form-group">
     <%= form.label :status %>
     <%= form.select :status, [['To Read', 'to_read'], ['Reading', 'reading'], ['Read', 'read']]%>
+    <% @book.errors.messages_for(:status).each do |message| %>
+    <span class="book__error"><%= message %></span>
+    <% end %>
   </div>
 
   <button class="book__submit">
