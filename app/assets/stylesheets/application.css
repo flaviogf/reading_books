@@ -95,6 +95,15 @@ th {
   font-family: "Open Sans", sans-serif;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+main {
+  height: calc(100% - 50px);
+}
+
 .material-icons {
   font-family: "Material Icons";
   font-weight: normal;

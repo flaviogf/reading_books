@@ -1,0 +1,54 @@
+<%= render 'shared/navbar' %>
+
+<main class="board">
+  <ul class="board__list">
+    <li class="board__item-title">
+      <span>To Read</span>
+      <span><%= @books_to_read.count %></span>
+    </li>
+
+    <% @books_to_read.each do |book| %>
+    <li class="board__item" draggable="true">
+      <div class="board__cover-wrapper">
+        <img class="board__cover" src="<%= book.cover %>" draggable="false" />
+      </div>
+      <span class="board__title"><%= truncate(book.title, :length => 14) %></span>
+      <span class="board__author"><%= truncate(book.author, :length => 14) %></span>
+    </li>
+    <% end %>
+  </ul>
+
+  <ul class="board__list">
+    <li class="board__item-title">
+      <span>Reading</span>
+      <span><%= @reading_books.count %></span>
+    </li>
+
+    <% @reading_books.each do |book| %>
+    <li class="board__item" draggable="true">
+      <div class="board__cover-wrapper">
+        <img class="board__cover" src="<%= book.cover %>" draggable="false" />
+      </div>
+      <span class="board__title"><%= truncate(book.title, :length => 14) %></span>
+      <span class="board__author"><%= truncate(book.author, :length => 14) %></span>
+    </li>
+    <% end %>
+  </ul>
+
+  <ul class="board__list">
+    <li class="board__item-title">
+      <span>Read</span>
+      <span><%= @read_books.count %></span>
+    </li>
+
+    <% @read_books.each do |book| %>
+    <li class="board__item" draggable="true">
+      <div class="board__cover-wrapper">
+        <img class="board__cover" src="<%= book.cover %>" draggable="false" />
+      </div>
+      <span class="board__title"><%= truncate(book.title, :length => 14) %></span>
+      <span class="board__author"><%= truncate(book.author, :length => 14) %></span>
+    </li>
+    <% end %>
+  </ul>
+</main>
