@@ -1,9 +1,11 @@
 <%= render 'shared/navbar' %>
 
+<%= javascript_pack_tag 'boards' %>
+
 <main class="board">
-  <ul class="board__list board__list--to-read">
+  <ul class="board__list board__list--to-read" data-status="to_read">
     <% @books_to_read.each do |book| %>
-    <li class="board__item" draggable="true">
+    <li id="board-item-<%= book.id %>" class="board__item" draggable="true">
       <div class="board__cover-wrapper">
         <img class="board__cover" src="<%= book.cover %>" draggable="false" />
       </div>
@@ -15,9 +17,9 @@
     <% end %>
   </ul>
 
-  <ul class="board__list board__list--reading">
+  <ul class="board__list board__list--reading" data-status="reading">
     <% @reading_books.each do |book| %>
-    <li class="board__item" draggable="true">
+    <li id="board-item-<%= book.id %>" class="board__item" draggable="true">
       <div class="board__cover-wrapper">
         <img class="board__cover" src="<%= book.cover %>" draggable="false" />
       </div>
@@ -29,9 +31,9 @@
     <% end %>
   </ul>
 
-  <ul class="board__list board__list--read">
+  <ul class="board__list board__list--read" data-status="read">
     <% @read_books.each do |book| %>
-    <li class="board__item" draggable="true">
+    <li id="board-item-<%= book.id %>" class="board__item" draggable="true">
       <div class="board__cover-wrapper">
         <img class="board__cover" src="<%= book.cover %>" draggable="false" />
       </div>
