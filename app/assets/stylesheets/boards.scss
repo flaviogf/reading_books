@@ -1,58 +1,84 @@
 .board {
   display: flex;
+  gap: 8px;
   overflow-x: auto;
-  padding: 16px;
+  padding: 16px 0 16px 16px;
 
-  &__list {
-    background-color: #ebecf0;
-    height: 100%;
-    margin-right: 8px;
-    padding: 13px;
-    width: 167px;
+  &:after {
+    content: "";
+    display: block;
+    min-width: 8px;
   }
 
-  &__item-title {
+  &__list {
     display: flex;
-    font-size: 16px;
-    font-weight: bold;
-    justify-content: space-between;
+    flex-direction: column;
+    background-color: #ebecf0;
+    min-width: 280px;
+    position: relative;
+
+    &:before {
+      align-items: center;
+      bottom: 0;
+      border-radius: 5px 5px 0 0;
+      display: flex;
+      height: 35px;
+      justify-content: center;
+      position: absolute;
+      transform: translateX(calc(140px - 62.5px));
+      width: 125px;
+    }
+
+    &--to-read:before {
+      background-color: #f2711c;
+      color: #fff;
+      content: "To Read";
+    }
+
+    &--reading:before {
+      background-color: #fbbd08;
+      color: #fff;
+      content: "Reading";
+    }
+
+    &--read:before {
+      background-color: #21ba45;
+      color: #fff;
+      content: "Read";
+    }
   }
 
   &__item {
+    align-items: center;
     background-color: #ffffff;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 2px;
     cursor: grab;
     display: flex;
-    flex-direction: column;
-    height: 240px;
-    margin-top: 13px;
-    padding: 3px;
-    position: relative;
-  }
-
-  &__item:first-child {
-    margin-top: 0;
+    margin: 8px;
   }
 
   &__cover-wrapper {
-    height: 191px;
-    width: 133px;
+    height: 65px;
+    width: 45px;
   }
 
   &__cover {
-    height: 191px;
-    left: 0;
-    position: absolute;
-    top: 0;
+    height: 100%;
     width: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 13px;
   }
 
   &__title {
     font-size: 16px;
-    font-weight: bold;
   }
 
   &__author {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
