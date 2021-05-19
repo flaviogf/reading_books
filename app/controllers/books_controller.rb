@@ -1,8 +1,11 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
-
   def index
     @books = Book.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @books }
+    end
   end
 
   def new
@@ -20,12 +23,21 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book = Book.find params[:id]
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @book }
+    end
   end
 
   def edit
+    @book = Book.find params[:id]
   end
 
   def update
+    @book = Book.find params[:id]
+
     if @book.update(books_params)
       redirect_to book_path(@book)
     else
@@ -34,6 +46,8 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    @book = Book.find params[:id]
+
     @book.destroy
 
     redirect_to books_url
@@ -42,9 +56,5 @@ class BooksController < ApplicationController
   private
   def books_params
     params.require(:book).permit(:title, :author, :cover, :status)
-  end
-
-  def set_book
-    @book = Book.find params[:id]
   end
 end
