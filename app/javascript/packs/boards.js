@@ -78,7 +78,7 @@ function changeStatus(book, status) {
 }
 
 function putBook(id, book, token) {
-  return fetch(`/books/${id}`, {
+  return fetch(`/books/${id}.json`, {
     headers: { "Content-Type": "application/json" },
     method: "PUT",
     body: JSON.stringify({ ...book, authenticity_token: token }),

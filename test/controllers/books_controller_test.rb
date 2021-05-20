@@ -34,7 +34,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
 
     post books_url, params: request_parameters
 
-    assert_response :success
+    assert_response :unprocessable_entity
   end
 
   test 'should show book' do
@@ -80,7 +80,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
 
     put book_path(book), params: request_parameters
 
-    assert_response :success
+    assert_response :unprocessable_entity
   end
 
   test 'should destroy book' do

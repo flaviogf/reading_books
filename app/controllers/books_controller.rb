@@ -1,59 +1,59 @@
 class BooksController < ApplicationController
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
+
   def index
     @books = Book.all
+  end
 
-    respond_to do |format|
-      format.html
-      format.json { render json: @books }
-    end
+  def show
   end
 
   def new
     @book = Book.new
   end
 
+  def edit
+  end
+
   def create
     @book = Book.new books_params
 
-    if @book.save
-      redirect_to book_path(@book)
-    else
-      render :new
-    end
-  end
-
-  def show
-    @book = Book.find params[:id]
-
     respond_to do |format|
-      format.html
-      format.json { render json: @book }
+      if @book.save
+        format.html { redirect_to @book, notice: 'Book was successfully created.' }
+        format.json { render :show, status: :created, location: @book }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @book.errors, status: :unprocessable_entity }
+      end
     end
-  end
-
-  def edit
-    @book = Book.find params[:id]
   end
 
   def update
-    @book = Book.find params[:id]
-
-    if @book.update(books_params)
-      redirect_to book_path(@book)
-    else
-      render :edit
+    respond_to do |format|
+      if @book.update books_params
+        format.html { redirect_to @book, notice: 'Book was successfully updated.' }
+        format.json { render :show, status: :ok, location: @book }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @book.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def destroy
-    @book = Book.find params[:id]
-
     @book.destroy
-
-    redirect_to books_url
+    respond_to do |format|
+      format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
+  def set_book
+    @book = Book.find params[:id]
+  end
+
   def books_params
     params.require(:book).permit(:title, :author, :cover, :status)
   end
