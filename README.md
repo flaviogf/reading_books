@@ -1,17 +1,64 @@
-# User Stories
+<h1 align="center">
+  Reading Books
+</h1>
 
-[ ] As a user I can create a book
+<p align="center">
+  <a href="#rocket-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#computer-techs">Techs</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#thinking-how-to-use">How to use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-license">License</a>
+</p>
 
-[ ] As a user I can see the details of a book
+## :rocket: Project
 
-[ ] As a user I can update a book
+:books: Reading Books manages the books you are reading
 
-[ ] As a user I can delete a book
+<p align="center">
+<img src=".github/preview.gif" />
+</p>
 
-[ ] As a user I can see all my books
+## User Stories
 
-[ ] As a user I can put a book on my "To read" list
+[x] As a user I can create a book
 
-[ ] As a user I can put a book on my "Reading" list
+[x] As a user I can see the details of a book
 
-[ ] As a user I can put a book on my "Read" list
+[x] As a user I can update a book
+
+[x] As a user I can delete a book
+
+[x] As a user I can see all my books
+
+[x] As a user I can put a book on my "To read" list
+
+[x] As a user I can put a book on my "Reading" list
+
+[x] As a user I can put a book on my "Read" list
+
+## :computer: Techs
+
+- Ruby
+- Ruby on Rails
+- SQLite3
+
+## :thinking: How to use
+
+```sh
+git clone https://github.com/flaviogf/reading_books.git
+
+cd reading_books
+
+bundle install
+
+bin/rails db:migrate
+
+bin/rails db:seed
+
+bin/rails server
+
+# It's running at http://localhost:3000
+```
+
+## :memo: License
+
+This project contains the MIT license. See the file [LICENSE](LICENSE).
