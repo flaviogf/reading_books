@@ -13,11 +13,13 @@
 
 :books: Reading Books manages the books you are reading
 
+### Preview
+
 <p align="center">
 <img src=".github/preview.gif" />
 </p>
 
-## User Stories
+### User Stories
 
 [x] As a user I can create a book
 
