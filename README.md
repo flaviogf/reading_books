@@ -52,6 +52,8 @@ cd reading_books
 
 bundle install
 
+rails webpacker:yarn_install
+
 bin/rails db:migrate
 
 bin/rails db:seed
