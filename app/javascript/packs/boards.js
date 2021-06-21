@@ -16,7 +16,7 @@ const EventEmmiter = {
 
 EventEmmiter.addEventListener("book-changed", updateBook);
 
-document.addEventListener("turbolinks:load", onLoad);
+window.addEventListener("load", onLoad);
 
 function onLoad() {
   document.querySelectorAll(".board__item").forEach(function (element) {
